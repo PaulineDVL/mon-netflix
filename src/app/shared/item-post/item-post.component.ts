@@ -2,7 +2,7 @@
 Import
 */
     // Angular
-    import { Component, OnInit, Input } from '@angular/core';
+    import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     import { ObservablesService } from '../../services/observable/observable.service';
 
 //
@@ -23,7 +23,9 @@ Componant class definition
     export class ItemPostComponent implements OnInit {
 
         // Input  data from parent component
-        @Input() news: any;
+        @Input() movies: any;
+        @Input() id: number;
+        @Output() sendMovieId = new EventEmitter();
 
 
         constructor(private ObservablesService: ObservablesService)

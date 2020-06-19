@@ -6,17 +6,18 @@
       <li class="nav-item btn btn-link">
         <a [routerLink]="'/'">Home</a>
       </li>
-      <li *ngIf="user" class="nav-item btn btn-link">
-          <a [routerLink]="'/bookmark'">Bookmark</a>
+      <li class="nav-item btn btn-link">
+        <a [routerLink]="'/'">Film</a>
       </li>
-      <li *ngIf="user" class="nav-item btn btn-link">
-        <a href="#" (click)="logout()">Logout</a>
+      <li class="nav-item btn btn-link">
+          <a [routerLink]="'/tv'">Série</a>
+      </li>
+      <li class="nav-item btn btn-link">
+          <a [routerLink]="'/my-movie'">Mes films</a>
       </li>
     </ul>
+
     <ul class="navbar-section">
-      <li *ngIf="user" class="nav-item btn btn-link bg-gray">
-        Hello : {{user.firstname}}
-      </li>
     </ul>
 
   </nav>

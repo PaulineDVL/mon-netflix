@@ -1,0 +1,22 @@
+
+<div class="container">
+
+  <main *ngIf="people" class="people">
+    <div class="columns">
+      <div class="column" id="affiche">
+        <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{people.profile_path}}" alt="">
+      </div>
+      <div class="column" id="info">
+        <h1 class="title" [innerText]="people.name"></h1>
+        <p class="title2"[innerText]="people.known_for_department"></p>
+        <span [innerText]="people.birthday"></span>
+        <p [innerText]="people.biography"></p>
+      </div>
+    </div>
+
+    <div class="movieList">
+      <app-movie-list-people></app-movie-list-people>
+    </div>
+  </main>
+
+</div>

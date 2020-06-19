@@ -1,0 +1,7 @@
+<div class="container">
+<h2>Les films les plus populaires</h2>
+  <div class="container cards">
+    <article *ngFor="let moviesItem of moviesList">
+      <app-item-post [movies]="moviesItem"></app-item-post>
+    </article>
+</div>

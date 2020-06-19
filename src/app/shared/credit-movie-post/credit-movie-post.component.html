@@ -1,0 +1,13 @@
+<div class="card credit">
+  <a [routerLink]="['/people/', credit.id]">
+
+    <div class="card-image">
+      <img src="https://image.tmdb.org/t/p/w220_and_h330_face{{credit.profile_path}}" alt="">
+    </div>
+    <div class="card-body">
+      <div class="card-title h5">{{ credit.name }}</div>
+      <p>{{credit.character}}</p>
+    </div>
+  </a>
+  
+</div>

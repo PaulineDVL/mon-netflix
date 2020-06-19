@@ -3,7 +3,6 @@ Imports
 */
 // Angular
 import { Routes } from '@angular/router';
-import { AuthGuard } from "./auth.guard";
 
 //
 
@@ -17,19 +16,22 @@ export const AppRouterModule: Routes = [
 
   },
   {
-    path: 'connected',
-    component: ConnectedPageComponent,
-    canActivate: [ AuthGuard ]
+    path: 'oneMovie',
+    component: OneMovieComponent,
   },
-  {
-    path: 'bookmark',
-    component: BookmarkPageComponent,
-    canActivate: [AuthGuard]
-  }
+  { path: 'movie/:id', /*canActivate: [AuthGuard],*/
+  component: OneMovieComponent },
+  { path: 'tv', /*canActivate: [AuthGuard],*/
+  component: TvPageComponent },
+  { path: 'people/:id', /*canActivate: [AuthGuard],*/
+  component: PeopleOneComponent },
+
+
 ];
 //
 
 // Inner
 import { HomePageComponent } from "./routes/home-page/home-page.component";
-import { ConnectedPageComponent } from "./routes/connected-page/connected-page.component";
-import { BookmarkPageComponent } from './routes/bookmark-page/bookmark-page.component';
+import { OneMovieComponent } from './routes/one-movie/one-movie.component';
+import { TvPageComponent } from './routes/tv-page/tv-page.component';
+import { PeopleOneComponent } from './routes/people-one/people-one.component';

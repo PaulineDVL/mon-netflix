@@ -10,14 +10,12 @@ import { Injectable } from '@angular/core';
 export class ObservablesService {
 
   // PROPERTIES
-  protected user: BehaviorSubject<any> = new BehaviorSubject<any>(null);
-  protected token: BehaviorSubject<any> = new BehaviorSubject<any>(null);
-  protected news: BehaviorSubject<any> = new BehaviorSubject<any>(null);
-  protected sources: BehaviorSubject<any> = new BehaviorSubject<any>(null);
-  protected source: BehaviorSubject<any> = new BehaviorSubject<any>(null);
-  protected bookmark: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
-
+  protected movies: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  protected tvs: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  protected credits: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  protected movie_credits: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  protected people: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
   constructor() { }
 
@@ -26,28 +24,20 @@ export class ObservablesService {
   // set data
   public setObservableData = (type: string, data: any) => {
     switch (type) {
-      case 'user':
-      this.user.next(data);
+      case 'movies':
+      this.movies.next(data);
       break;
-
-      case 'sources':
-      this.sources.next(data);
+      case 'tvs':
+      this.tvs.next(data);
       break;
-
-      case 'source':
-      this.source.next(data);
+      case 'credits':
+      this.credits.next(data);
       break;
-
-      case 'news':
-      this.news.next(data);
+      case 'movie_credits':
+      this.movie_credits.next(data);
       break;
-
-      case 'token':
-      this.token.next(data);
-      break;
-
-      case 'bookmark':
-      this.bookmark.next(data);
+      case 'people':
+      this.people.next(data);
       break;
 
       default:
@@ -58,24 +48,20 @@ export class ObservablesService {
   // get data
   public getObservableData = (type: string): Observable<any> => {
     switch (type) {
-      case 'user':
-      return this.user;
+      case 'tvs':
+      return this.tvs;
       break;
-
-      case 'sources':
-      return this.sources;
+      case 'movies':
+      return this.movies;
       break;
-
-      case 'source':
-      return this.source;
+      case 'credits':
+      return this.credits;
       break;
-
-      case 'news':
-      return this.news;
+      case 'movie_credits':
+      return this.movie_credits;
       break;
-
-      case 'bookmark':
-      return this.bookmark;
+      case 'people':
+      return this.people;
       break;
 
       default:

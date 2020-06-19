@@ -1,16 +1,107 @@
 /* You can add global styles to this file, and also import other style files */
 
 
+$primary : #e46586;
+
 nav {
   display: flex;
   justify-content: space-around;
   width: 80%;
   margin: 0 auto;
+  a {
+    color: #e46586!important;
+  }
+}
+
+a {
+  color: #333;
+  &:hover, &:visited {
+    text-decoration: none;
+    color: #333;
+  }
+
 }
 
 .container {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
+  max-width: 1500px;
+  .columns {
+    display: flex;
+    flex-direction:row
+    .column {
+      flex-basis: 45%;
+    }
+  }
+}
+
+.movie {
+  background-position: center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background: #333;
+  color:white;
+  width: 100%;
+  margin: 0px;
+  .columns {
+    background: rgba(black, .7);
+    padding: 40px 20px;
+    width: 100%;
+    margin: 0px;
+
+  }
+  #affiche {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      box-shadow: 0 0.25rem 1rem rgba(white,.25);
+      border-radius: 10px;
+    }
+  }
+  #info {
+    .title2 {
+      color:$primary;
+    }
+    .chip {
+      color:black;
+    }
+  }
+}
+
+.credits app-credits-movie, .movieList app-movie-list-people{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  article {
+    margin: 10px;
+    width: 20%;
+    box-sizing:border-box;
+    .card {
+      width: 150px;
+      border:solid 1px lightgrey;
+      border-radius: 10px;
+      box-shadow: 0 0.25rem 1rem rgba(black,.15);
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        object-position: top;
+      }
+      .card-body {
+        padding-bottom: 0px;
+        height: 100px;
+      }
+      .card-title {
+        font-size: 18px;
+      }
+      p {
+        font-size: 13px;
+      }
+    }
+  }
 }
 
 .toast-secondary {
@@ -19,13 +110,19 @@ nav {
   color: inherit;
 }
 
+.card {
+  border:none;
+  margin: 10px;
+  color: #333;
+  .card-image img{
+    width: 200px;
+  }
+}
 
 .cards {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-
+  overflow:auto;
   article {
     flex-basis: 45%;
     margin-bottom: 15px;

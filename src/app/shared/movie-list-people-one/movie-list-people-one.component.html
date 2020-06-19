@@ -1,0 +1,12 @@
+
+<div class="card">
+  <a [routerLink]="['/movie/', people.id]">
+    <div class="card-image">
+      <img src="https://image.tmdb.org/t/p/w220_and_h330_face{{people.poster_path}}" alt="">
+    </div>
+    <div class="card-body">
+      <div class="card-title h5">{{ people.title }}</div>
+      <p>{{people.release_date}}</p>
+    </div>
+  </a>
+</div>

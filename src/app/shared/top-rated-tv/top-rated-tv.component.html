@@ -1,0 +1,7 @@
+<div class="container">
+<h2>Les séries les mieux notés</h2>
+  <div class="container cards">
+    <article *ngFor="let tvsItem of tvsList">
+      <app-tvs-post [tvs]="tvsItem"></app-tvs-post>
+    </article>
+</div>

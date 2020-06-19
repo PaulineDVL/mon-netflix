@@ -21,32 +21,21 @@ export class HeaderComponent implements OnInit {
      private Router: Router
   ){
     // Get user data observer
-    this.ObservablesService.getObservableData('user').subscribe(userDataObserver => {
-      if (userDataObserver === null) {
-        this.user = null;
-      } else {
-        if (userDataObserver) {
-          // Update userData value
-          this.user = userDataObserver;
-        } else {
-          this.user = null;
-        }
-      }
-    })
+
   }
   //
   public logout = () => {
 
     // Delete localstorage
     localStorage.removeItem('token');
-    localStorage.removeItem('bookmark');
-    localStorage.removeItem('news');
-    localStorage.removeItem('source');
+    localStorage.removeItem('movies');
+
+
     // Set user info obserrbale value
-    this.ObservablesService.setObservableData('user', null);
     this.ObservablesService.setObservableData('token', null);
-    this.ObservablesService.setObservableData('sources', null);
-    this.ObservablesService.setObservableData('news', null);
+    this.ObservablesService.setObservableData('movies', null);
+
+
     this.Router.navigateByUrl('/');
   }
 

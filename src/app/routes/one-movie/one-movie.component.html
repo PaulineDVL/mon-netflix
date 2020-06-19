@@ -1,0 +1,26 @@
+
+<div class="container">
+
+  <main *ngIf="movie" class="movie" style="background-image: url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces{{movie.backdrop_path}})">
+    <div class="columns">
+      <div class="column" id="affiche">
+        <img src="https://image.tmdb.org/t/p/w220_and_h330_face{{movie.poster_path}}" alt="">
+      </div>
+      <div class="column" id="info">
+        <h1 class="title" [innerText]="movie.title"></h1>
+        <p class="title2"[innerText]="movie.tagline"></p>
+        <span [innerText]="movie.release_date"></span>
+        <p [innerText]="movie.overview"></p>
+        <app-genres-movie></app-genres-movie>
+      </div>
+    </div>
+  </main>
+
+</div>
+
+
+<div class="container">
+  <div class="credits">
+    <app-credits-movie></app-credits-movie>
+  </div>
+</div>
