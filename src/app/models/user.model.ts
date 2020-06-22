@@ -1,7 +1,9 @@
-/* USER MODEL */
+// Object models in TypeScript are Interfaces
 export interface UserModel {
-    firstName: string;
-    lastName: string;
-    email: string;
-    password: string;
+    firstname: String,
+    lastname: String,
+    email: String,
+    password: String,
+    repeatpassword?: String,
+    _id?: String,
 }

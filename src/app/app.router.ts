@@ -25,6 +25,8 @@ export const AppRouterModule: Routes = [
   component: TvPageComponent },
   { path: 'people/:id', /*canActivate: [AuthGuard],*/
   component: PeopleOneComponent },
+  { path: 'login', /*canActivate: [AuthGuard],*/
+  component: ConnexionPageComponent },
 
 
 ];
@@ -35,3 +37,4 @@ import { HomePageComponent } from "./routes/home-page/home-page.component";
 import { OneMovieComponent } from './routes/one-movie/one-movie.component';
 import { TvPageComponent } from './routes/tv-page/tv-page.component';
 import { PeopleOneComponent } from './routes/people-one/people-one.component';
+import { ConnexionPageComponent } from './routes/connexion-page/connexion-page.component';

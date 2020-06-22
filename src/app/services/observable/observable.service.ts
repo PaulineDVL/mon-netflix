@@ -16,6 +16,7 @@ export class ObservablesService {
   protected credits: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   protected movie_credits: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   protected people: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  protected user: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
   constructor() { }
 
@@ -38,6 +39,9 @@ export class ObservablesService {
       break;
       case 'people':
       this.people.next(data);
+      break;
+      case 'user':
+      this.user.next(data);
       break;
 
       default:
@@ -62,6 +66,9 @@ export class ObservablesService {
       break;
       case 'people':
       return this.people;
+      break;
+      case 'user':
+      return this.user;
       break;
 
       default:

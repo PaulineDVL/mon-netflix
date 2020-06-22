@@ -21,7 +21,18 @@ export class HeaderComponent implements OnInit {
      private Router: Router
   ){
     // Get user data observer
-
+    this.ObservablesService.getObservableData('user').subscribe(userDataObserver => {
+      if (userDataObserver === null) {
+        this.user = null;
+      } else {
+        if (userDataObserver) {
+          // Update userData value
+          this.user = userDataObserver;
+        } else {
+          this.user = null;
+        }
+      }
+    })
   }
   //
   public logout = () => {
@@ -34,6 +45,7 @@ export class HeaderComponent implements OnInit {
     // Set user info obserrbale value
     this.ObservablesService.setObservableData('token', null);
     this.ObservablesService.setObservableData('movies', null);
+    this.ObservablesService.setObservableData('user', null);
 
 
     this.Router.navigateByUrl('/');

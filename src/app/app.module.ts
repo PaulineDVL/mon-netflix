@@ -8,6 +8,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router"
 import { AppRouterModule } from "./app.router";
 import { AppComponent } from './app.component';
+import { AuthGuard } from "./auth.guard";
+
 
 //Routes
 import { HomePageComponent } from './routes/home-page/home-page.component';
@@ -15,6 +17,8 @@ import { HomePageComponent } from './routes/home-page/home-page.component';
 //Services
 import { CrudService } from "./services/crud/crud.service";
 import { CastVideoService } from './services/cast/cast-video.service';
+import { AuthService } from './services/auth/auth-service.service';
+
 
 
 //Shared
@@ -39,6 +43,9 @@ import { GenreMovieOneComponent } from './shared/genre-movie-one/genre-movie-one
 import { PeopleOneComponent } from './routes/people-one/people-one.component';
 import { MovieListPeopleComponent } from './shared/movie-list-people/movie-list-people.component';
 import { MovieListPeopleOneComponent } from './shared/movie-list-people-one/movie-list-people-one.component';
+import { ConnexionPageComponent } from './routes/connexion-page/connexion-page.component';
+import { RegisterFormComponent } from './shared/register-form/register-form.component';
+import { LoginFormComponent } from './shared/login-form/login-form.component';
 
 
 
@@ -67,6 +74,9 @@ import { MovieListPeopleOneComponent } from './shared/movie-list-people-one/movi
     PeopleOneComponent,
     MovieListPeopleComponent,
     MovieListPeopleOneComponent,
+    ConnexionPageComponent,
+    RegisterFormComponent,
+    LoginFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,7 +88,7 @@ import { MovieListPeopleOneComponent } from './shared/movie-list-people-one/movi
   ],
   providers: [
     CrudService,
-    CastVideoService
+    AuthService
     ],
   bootstrap: [AppComponent]
 })
